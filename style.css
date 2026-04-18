@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+}
+
+/* Start screen */
+.start-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff7aa2, #ffc3d3);
+  z-index: 999;
+}
+
+.start-card {
+  width: min(90%, 420px);
+  padding: 32px 24px;
+  text-align: center;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.start-card h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.start-card p {
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.hidden {
+  display: none;
+}
+
+/* App / stories */
+.app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.story {
+  position: absolute;
+  inset: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.story.active {
+  display: block;
+}
+
+/* Background */
+.story-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-bg img {
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+  background: #000;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.soft-bg {
+  background: linear-gradient(180deg, #ff8fb1, #ffcad9);
+}
+
+.note-bg {
+  background: linear-gradient(180deg, #ff7aa2, #ffb8ca);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.28),
+    rgba(0,0,0,0.08),
+    rgba(0,0,0,0.42)
+  );
+}
+
+.overlay.light {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.12),
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.22)
+  );
+}
+
+/* Progress bars */
+.progress-wrap {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: white;
+  border-radius: 999px;
+  transition: width 0.25s linear;
+}
+
+/* Content */
+.story-content {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  color: white;
+  padding: 28px 18px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.center-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.top-text {
+  margin-top: 16px;
+}
+
+.bottom-text {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.story-tag {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  opacity: 0.98;
+  text-align: center;
+}
+
+#storyTitle {
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
+  line-height: 1.25;
+  max-width: 700px;
+  text-align: center;
+}
+
+#storyCaption {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  max-width: 92%;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.28);
+  padding: 10px 16px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+/* Tap zones */
+.tap-zone {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 8;
+}
+
+.tap-zone.left {
+  left: 0;
+}
+
+.tap-zone.right {
+  right: 0;
+}
+
+/* Videos */
+.video-row {
+  display: flex;
+  gap: 14px;
+  width: min(92vw, 760px);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.story-video {
+  width: min(42vw, 260px);
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border: 2px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+}
+
+.video-note {
+  margin-top: 18px;
+  font-size: 1rem;
+  opacity: 0.96;
+}
+
+/* Note */
+.note-box {
+  width: min(90vw, 700px);
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.28);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 24px 20px;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 1rem;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.18);
+}
+
+.note-box p {
+  margin-bottom: 12px;
+}
+
+.final-line {
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+/* Buttons */
+.story-buttons {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.main-btn {
+  background: white;
+  color: #ff4c82;
+}
+
+.ghost-btn {
+  background: rgba(255,255,255,0.18);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.28);
+}
+
+@media (max-width: 600px) {
+  #storyCaption {
+    font-size: 0.95rem;
+  }
+
+  .story-video {
+    width: 42vw;
+    min-width: 145px;
+  }
+
+  .note-box {
+    font-size: 0.96rem;
+  }
+
+  .story-bg img {
+    width: 94%;
+    height: 88%;
+  }
+}

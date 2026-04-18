@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Start Screen -->
+  <section id="startScreen" class="start-screen">
+    <div class="start-card">
+      <h1>Our Love Story ❤️</h1>
+      <p>Tap to enter</p>
+      <button onclick="startExperience()">Enter</button>
+    </div>
+  </section>
+
+  <!-- Story App -->
+  <main id="app" class="app hidden">
+
+    <!-- Story 1: Photos -->
+    <section id="story1" class="story active">
+      <div class="progress-wrap" id="progressWrap"></div>
+
+      <div class="story-bg">
+        <img id="storyImage" src="images/img1.jpeg" alt="memory" />
+      </div>
+
+      <div class="overlay"></div>
+
+      <div class="story-content">
+        <div class="top-text">
+          <p class="story-tag">Happy Anniversary ❤️</p>
+          <h1 id="storyTitle">Our sweetest memories</h1>
+        </div>
+
+        <div class="bottom-text">
+          <p id="storyCaption">A memory I never want to lose ❤️</p>
+        </div>
+      </div>
+
+      <div class="tap-zone left" onclick="prevPhoto()"></div>
+      <div class="tap-zone right" onclick="nextPhoto()"></div>
+    </section>
+
+    <!-- Story 2: Videos -->
+    <section id="story2" class="story">
+      <div class="story-bg soft-bg"></div>
+      <div class="overlay light"></div>
+
+      <div class="story-content center-content">
+        <p class="story-tag">Our Videos 🎥</p>
+        <h2 class="section-title">Little clips, forever memories</h2>
+
+        <div class="video-row">
+          <video class="story-video" autoplay loop muted playsinline>
+            <source src="videos/vid1.mp4" type="video/mp4" />
+          </video>
+
+          <video class="story-video" autoplay loop muted playsinline>
+            <source src="videos/vid2.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <p class="video-note">silent memories, loud feelings 💖</p>
+
+        <div class="story-buttons">
+          <button class="ghost-btn" onclick="goToStory(1)">Back</button>
+          <button class="main-btn" onclick="goToStory(3)">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story 3: Final Note -->
+    <section id="story3" class="story">
+      <div class="story-bg note-bg"></div>
+      <div class="overlay"></div>
+
+      <div class="story-content center-content">
+        <p class="story-tag">For You 💌</p>
+        <h2 class="section-title">My favorite person</h2>
+
+        <div class="note-box">
+          <p>Happy Anniversary, my love ❤️
+          </p>
+          <p>ಹುಚ್ಚನಂತೆ ಹಚ್ಚಿಕೊಂಡಿರುವೆ ನಾ ನಿನ್ನ ಯಾವುದೇ ಕಾರಣಕೂ ಬಿಟ್ಟು ಹೋಗದಿರು ನೀ ನನ್ನ.</p>
+          <p>
+            Thank you for every smile, every little moment, and every memory
+            that became beautiful because it had you in it.
+          </p>
+          <p>
+            You make my life softer, brighter, and happier in ways I can never
+            fully explain.
+          </p>
+          <p>
+            No matter what, I will always be grateful for us.
+          </p>
+          <p class="final-line">
+            I love you endlessly. Always and forever. 💖
+          </p>
+          <p>⠀⠀⠀⠀⠀⠀⣀⣀⣠⣠⣤⣤⣶⣶⡖⠲⣦⣴⣶⣶⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢰⡟⣹⣋⣹⢏⣿⣿⣿⠯⠁⠐⠃⢘⠫⢿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⣿⣿⣇⣄⣝⠏⠻⠛⠀⠀⠀⠀⠈⠰⠣⣻⡲⣤⣤⣴⡒⠒⠒⠒⠤⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⣇⣟⣿⠳⡏⠁⠀⠀⠀⠀⠀⠀⠀⠾⣿⡷⠋⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⣆⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⡏⣭⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠏⠑⢦⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⣗⢀⡀⠀⠀⠀⢠⣶⠠⠤⢒⣰⠒⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣐⡦⡹⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⣿⢀⠁⠀⠀⠀⠀⠉⠀⠀⠀⠁⢠⡇⠈⠀⡻⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡭⠊⠁⠀⠀⠀⠀⠀
+⣠⣶⣶⣄⠀⠙⠿⣦⡤⠀⠀⠀⠀⠀⠀⢀⢀⣠⣾⣷⡀⠀⠁⠀⠘⠃⠀⠀⢶⠆⠀⠀⠀⠀⢺⠄⠀⠀⠀⠀⠀⠀⠀
+⠘⣿⣿⢎⡆⠀⠀⠈⠉⢉⣷⣶⠉⠴⣚⠗⢺⣿⣾⡿⣾⣷⡦⢄⣀⠀⠀⠀⠀⠚⠂⠀⢀⡤⠟⠫⢽⠄⠀⠀⠀⠀⠀
+⠀⠈⣿⣥⢸⡀⠀⠀⠀⣼⢫⠾⣿⣼⠻⡝⢾⡏⠀⠁⠀⠉⠉⠉⠋⠛⠒⠓⠶⢶⡶⣟⡛⠀⠉⠔⢾⠄⠀⠀⠀⠀⠀
+⠀⠀⣿⡎⢼⡇⠀⠀⣸⢿⡸⢠⣾⣏⠓⢠⢸⣿⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡍⢿⣄⠀⡀⠎⠀⢀⡠⠤⢄⡀
+⠀⠀⢻⣫⢺⡇⠀⣰⢻⡿⠀⣸⣟⣟⠐⠀⢚⡿⣿⣦⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡄⠊⢃⣈⠦⡔⠁⢀⡀⢀⠇
+⠀⠀⠀⢻⣇⡉⢦⡟⡾⡈⠀⠉⣏⡉⠀⠀⢹⢛⣿⠻⡏⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⣪⠜⢠⡞⠁⣰⠃⠀⠀⠀
+⠀⠀⠀⠀⠛⢿⣿⡷⢵⡄⡀⠀⢨⡟⣦⢴⢾⠻⣯⣿⡇⢀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣗⠒⠋⠀⡠⠃⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⢦⣔⣠⠄⠈⠐⠘⠱⠁⠚⣩⣷⠿⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⠒⠒⠉⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣰⠂⠀⠀⠀⢀⣨⡿⣝⠀⡟⢆⠀⠀⠀⠀⠀⠀⠀⠀⣀⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣯⠀⠀⠀⠀⠀⡈⢽⣻⢸⣏⠁⠀⠀⠀⠀⠀⠀⣰⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠒⠶⠦⠴⠗⠋⠁⠀⠈⠂⠀⠀⠠⠤⠤⠔⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡦⠖⠳⢲⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠈</p>
+        </div>
+
+        <div class="story-buttons">
+          <button class="ghost-btn" onclick="goToStory(2)">Back</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
